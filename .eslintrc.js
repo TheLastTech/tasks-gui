@@ -14,6 +14,7 @@ module.exports = {
     'no-plusplus': 0,
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'indent': 0,
     'eslint-disable indent': 0,
     'global-require': 'off',
     'no-new': 0, // Intrusive when using Chart.js instances.

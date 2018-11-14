@@ -7,7 +7,7 @@ import ProposalOverview from './views/ProposalOverview.vue'
 import UserProfile from './views/UserProfile.vue'
 import Login from './views/Login.vue';
 import CreateProposal from './views/UserPropose.vue'
-import BrowseProposals from './views/BrowseProposals.vue'
+import BrowseProposals from './views/BrowseProposals/BrowseProposals.vue'
 
 Vue.use(Router);
 

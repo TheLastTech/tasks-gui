@@ -11,28 +11,28 @@
 </template>
 
 <script>
-  import RPCHelper from '@/rpc/rpc.js';
-  import router from '@/router.js'
-  export default {
-    data() {
-      return {
-        LoginForm: {
-          Username: '',
-          Password: ''
-        }
-      }
+import RPCHelper from '@/rpc/rpc';
+import router from '@/router';
+
+export default {
+  data() {
+    return {
+      LoginForm: {
+        Username: '',
+        Password: '',
+      },
+    };
+  },
+  methods: {
+    LoginClick() {
+      const { Username, Password } = this.LoginForm;
+      const Success = RPCHelper.Login(Username, Password);
+      if (Success) { router.go('/dashboard'); }
     },
-    methods: {
-      LoginClick() {
-        let {Username, Password} = this.LoginForm;
-        let Success =RPCHelper.Login(Username, Password);
-        if(Success)
-          router.go('/dashboard');
-      }
-    },
-    name: 'login',
-    mounted() {
-    },
-  };
+  },
+  name: 'login',
+  mounted() {
+  },
+};
 </script>
 

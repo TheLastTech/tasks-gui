@@ -13,10 +13,12 @@ import router from './router';
 
 // Layouts
 import Default from '@/layouts/Default.vue';
+import Search from '@/layouts/Search.vue';
 import NoAuth from '@/layouts/NoAuth.vue';
 ShardsVue.install(Vue);
 
 Vue.component('default-layout', Default);
+Vue.component('Search-layout', Search);
 Vue.component('NoAuth-layout', NoAuth);
 
 Vue.config.productionTip = false;

@@ -8,8 +8,13 @@ module.exports = {
     '@vue/airbnb',
   ],
   rules: {
+    'no-trailing-spaces': 0,
+    'keyword-spacing': 0,
+    'space-before-blocks': 0,
+    'no-plusplus': 0,
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
+    'eslint-disable indent': 0,
     'global-require': 'off',
     'no-new': 0, // Intrusive when using Chart.js instances.
     'no-underscore-dangle': 0, // Chart.js uses underscore dangles (_) internally.

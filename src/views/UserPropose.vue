@@ -12,30 +12,31 @@
     <d-row>
       <!-- Editor -->
       <d-col lg="9" md="12">
-        <anp-editor />
+        <proposal-editor/>
       </d-col>
 
       <!-- Sidebar Widgets -->
       <d-col lg="3" md="12">
-        <anp-sidebar-actions />
-        <anp-sidebar-categories />
+        <proposal-sidebar-actions/>
+        <proposal-sidebar-categories/>
       </d-col>
     </d-row>
   </d-container>
 </template>
 
 <script>
-import SidebarActions from '@/components/add-new-post/SidebarActions.vue';
-import SidebarCategories from '@/components/add-new-post/SidebarCategories.vue';
-import Editor from '@/components/add-new-post/Editor.vue';
+import ProposalSidebarActions from '@/components/proposal-editor/SidebarActions.vue';
+import ProposalSidebarCategories from '@/components/proposal-editor/SidebarCategories.vue';
+import ProposalEditor from '@/components/proposal-editor/Editor.vue';
 
 import 'quill/dist/quill.snow.css';
 
 export default {
   components: {
-    anpEditor: Editor,
-    anpSidebarActions: SidebarActions,
-    anpSidebarCategories: SidebarCategories,
+    ProposalEditor,
+    ProposalSidebarActions,
+    ProposalSidebarCategories,
+
   },
 };
 </script>

@@ -21,7 +21,7 @@
 </template>
 
 <script>
-  /* eslint-disable */
+/* eslint-disable */
 import LoginBox from '@/components/login/LoginBox.vue';
 
 

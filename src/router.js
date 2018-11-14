@@ -2,9 +2,13 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
+import ComponentsOverview from './views/ComponentsOverview.vue'
+import ProposalOverview from './views/ProposalOverview.vue'
 import UserProfile from './views/UserProfile.vue'
 import Login from './views/Login.vue';
 import CreateProposal from './views/UserPropose.vue'
+import BrowseProposals from './views/BrowseProposals.vue'
+
 Vue.use(Router);
 
 export default new Router({
@@ -24,7 +28,7 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: Login,
-      meta: { layout: 'NoAuth' },
+      meta: {layout: 'NoAuth'},
     },
     {
       path: '/profile',
@@ -32,9 +36,24 @@ export default new Router({
       component: UserProfile,
     },
     {
-      path:'/proposeproj',
-      name:'proposal',
-      component:CreateProposal
-    }
+      path: '/proposeproj',
+      name: 'proposal',
+      component: CreateProposal
+    }, {
+      path: '/proposal-overview',
+      name: 'proposal-overview',
+      component: ProposalOverview
+    }, {
+      path: '/browse-proposals',
+      name: 'browse-proposals',
+      component: BrowseProposals,
+      meta: {
+        layout: 'Search'
+      }
+    }, {
+      path: '/dev-lib',
+      name: 'library',
+      component: ComponentsOverview
+    },
   ],
 });

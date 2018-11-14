@@ -1,20 +1,34 @@
 <template>
-  <d-card class="card-small mb-4">
 
-    <d-card-header class="border-bottom">
-      <h6 class="m-0">Finance Filters</h6>
-    </d-card-header>
-    <d-input-group prepend="Token Min/Max&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" append="" class="mb-3">
-      <d-input value="1"/>
-      <d-input value="10000"/>
-    </d-input-group>
-    <d-input-group prepend="Contributor Min/Max" append="" class="mb-3">
-      <d-input value="1"/>
-      <d-input value="10000"/>
-    </d-input-group>
-    <d-input-group prepend="Manager Pledges:&nbsp;&nbsp;&nbsp;&nbsp;" append="" class="mb-3">
-      <d-input value="10000" :type="number"/>
-    </d-input-group>
+
+  <div class="card card-small mb-4">
+    <div class="card-header border-bottom">
+      <h6 class="m-0">Required Finances</h6>
+    </div>
+    <div class="card-body p-0 pb-3 text-center">
+      <table class="table mb-0">
+        <thead class="bg-light">
+        <tr>
+          <th scope="col" class="border-0">#</th>
+          <th scope="col" class="border-0">Funding Name</th>
+          <th scope="col" class="border-0">Funding Type</th>
+          <th scope="col" class="border-0">Tokens Needed</th>
+          <th scope="col" class="border-0">Tokens</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>1</td>
+          <td>Scss Developer</td>
+          <td>Graphics</td>
+          <td>125</td>
+          <td>0</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+
   </d-card>
 
 </template>
@@ -23,7 +37,9 @@
 
   export default {
 
-
+    props: {
+      post: {},
+    },
     data() {
       return {
         LanguagesSelected: [],
@@ -32,12 +48,11 @@
     },
 
     methods: {
+// eslint-disable-next-line no-unused-vars
       FilterData(NewValue) {
       },
       runFilter(Item, Filters) {
-
-        return Filters.split(',').find(Filter => Item.value.toLowerCase().indexOf(Filter.toLowerCase()) >= 0)
-
+        return Filters.split(',').find(Filter => Item.value.toLowerCase().indexOf(Filter.toLowerCase()) >= 0);
       },
     },
     name: 'browse-proposal-card-finance-tab',

@@ -18,7 +18,7 @@
     { value: 'Frontend Logic', text: 'Frontend Logic: You are the gateway the user sees into the product' },
     { value: 'Data', text: 'Data: Beyond simple queries, you are a data wizard.' },
     { value: 'Backend Logic', text: 'Backend Logic: Security and structured, you build a fortress of good code.' },
-    { value: 'Personal/Accounting', text: 'Personal/Accounting: The paperwork monster will not slay itself.' }];
+    { value: 'Personnel/Accounting', text: 'Personal/Accounting: The paperwork monster will not slay itself.' }];
 
   export default {
 

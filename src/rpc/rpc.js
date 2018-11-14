@@ -19,9 +19,10 @@ export const RpcServer = class RpcFaker {
   }
 
   static GetProposedProject() {
-    const rng = Math.floor(Math.random() * Math.floor(26)) ;
+    const rng = Math.floor(Math.random() * 26);
+    const rng2 = Math.floor(Math.random() * 26);
     return {
-      backgroundImage: `https://picsum.photos/40${rng}/400/?random`,
+      backgroundImage: `https://picsum.photos/40${rng}/40${rng2}/?random`,
       category: faker.company.catchPhraseNoun(),
       categoryTheme: 'dark',
       author: faker.name.findName(),
@@ -29,8 +30,12 @@ export const RpcServer = class RpcFaker {
       title: faker.lorem.sentence(),
       body: faker.lorem.paragraphs(Math.floor(Math.random() * Math.floor(1)) + 1),
       id: faker.lorem.slug(),
-      date: dateFormat(RandomDate(), 'dddd, mmmm dS, yyyy'),
+      date: RpcServer.GetRandomFormattedDate(),
     };
+  }
+
+  static GetRandomFormattedDate() {
+    return dateFormat(RandomDate(), 'dddd, mmmm dS, yyyy');
   }
 
   static GetProposals(Count = 40) {
@@ -49,12 +54,29 @@ export const RpcServer = class RpcFaker {
     return Comments;
   }
 
-  static GetUsers(Count = 20) {
-    const Users = [];
+  static GetManagers(Count = 20) {
+    const Managers = [];
     for (let i = 0; i < Count; i++) {
-      Users.push(RpcServer.GetUser());
+      Managers.push(RpcServer.GetUser());
     }
-    return Users;
+    return Managers.map(A => RpcServer.GetUserPledgeAsManager(A));
+  }
+
+  static GetUserPledgeAsManager(User) {
+    const TokenCount = Math.floor(Math.random() * 1000);
+    const BadgeCount = Math.floor(Math.random() * 20);
+    const badgelist = [];
+    for (let i = 0; i < BadgeCount; i++) {
+      badgelist.push(faker.company.catchPhraseNoun());
+    }
+// eslint-disable-next-line no-param-reassign
+    User.ManagerPledge = {
+      blurb: faker.lorem.sentence(),
+      tokens: TokenCount,
+      badges: badgelist,
+      pledgeDate: RpcServer.GetRandomFormattedDate(),
+    };
+    return User;
   }
 
   static GetUser() {
@@ -97,7 +119,7 @@ export default class RPCHelper {
     try {
       return await RPCHelper.FetchPostJson(
         RPCHelper.LoginPath,
-        { Username: User, Password: Pass },
+        {Username: User, Password: Pass},
       );
     } catch (e) {
       ErrorHelper.LogAndReportError('Rpc Login', e);
@@ -105,6 +127,7 @@ export default class RPCHelper {
     return false;
   }
 }
+
 
 function RandomDate() {
   const start = new Date();

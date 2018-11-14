@@ -30,16 +30,15 @@
             </div>
           </div>
           <d-card-body>
-            <d-tabs card pills vertical>
+            <d-tabs @input="(tab)=>TabChanged(post,idx,tab)" card pills vertical>
               <d-tab title="Project Overview" active>
                 <browse-proposal-card-overview-tab :post="post"/>
               </d-tab>
-
               <d-tab title="Finances">
-                <browse-proposal-card-finance-tab/>
+                <browse-proposal-card-finance-tab :post="post"/>
               </d-tab>
               <d-tab title="Manager">
-                <div/>
+                <browse-proposal-card-manager-tab :PledgeManager="PledgeManagers[idx]" />
               </d-tab>
               <d-tab title="Pledge">
                 <browse-proposal-card-pledge-tab/>
@@ -80,10 +79,14 @@
   import BrowseProposalCardPledgeTab from './Card/BrowseProposalCardPledgeTab.vue';
   import BrowseProposalCardFinanceTab from './Card/BrowseProposalCardFinanceTab.vue';
   import BrowseProposalFilter from './BrowseProposalFilter.vue';
-  import BrowseProposalCardShareTab from './Card/BrowseProposalCardShareTab.vue';
+  import BrowseProposalCardManagerTab from './Card/BrowseProposalCardManagerTab';
 
   const PostsListOne = RpcServer.GetProposals(12);
-
+  const PledgeManagers ={};
+  for (let i = 0; i < PostsListOne.length; i++) {
+    PledgeManagers[i] = RpcServer.GetManagers();
+  }
+  console.log(PledgeManagers);
   // Second Row of posts
   const PostsListTwo = RpcServer.GetProposals(6);
 
@@ -94,7 +97,7 @@
 
   export default {
     components: {
-      BrowseProposalCardShareTab,
+      BrowseProposalCardManagerTab,
       BrowseProposalFilter,
       BrowseProposalCardFinanceTab,
       BrowseProposalCardPledgeTab,
@@ -106,6 +109,7 @@
         PostsListTwo,
         PostsListThree,
         PostsListFour,
+        PledgeManagers,
         LanguagesSelected: [],
         SkillsSelected: [],
         FinanceFilter: {},
@@ -122,6 +126,7 @@
           this.LanguagesSelected = newValue;
         },
       },
+
       SkillsFilterString: {
 
         get() {
@@ -143,9 +148,9 @@
         },
       },
     },
+
     methods: {
       JobSkillFiltersChange(NewFilters) {
-
         this.FinanceFilterString = NewFilters;
         this.PostsListOne = RpcServer.GetProposals(4);
         this.PostsListTwo = RpcServer.GetProposals(2);
@@ -166,7 +171,17 @@
         this.PostsListThree = RpcServer.GetProposals(3);
         this.PostsListFour = RpcServer.GetProposals(4);
       },
+      TabChanged(post, idx, tab) {
+
+        if (tab === 2) //all we get is index 0 based
+        {
+          this.PledgeManagers[idx] = RpcServer.GetManagers();
+        }
+
+
+      },
     },
   };
+
 </script>
 

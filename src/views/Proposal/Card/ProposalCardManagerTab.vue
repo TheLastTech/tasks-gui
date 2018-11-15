@@ -11,9 +11,14 @@
               <h5 class="card-title">
                 <small class="muted">{{ Manager.firstName }} {{ Manager.lastName }} -&nbsp;</small>
                 <a class="text-fiord-blue" href="#">{{ Manager.ManagerPledge.tokens }} Tokens</a>
-              </h5>
+                &nbsp; <d-button-group>
+                  <d-button class="btn-warning"><i class="far fa-hand-point-up"></i> Apply Vote for Manager</d-button>
+
+                </d-button-group> </h5>
               <p class="card-text d-inline-block mb-3">{{ Manager.ManagerPledge.blurb}}</p>
               <span class="text-muted">Submitted: {{ Manager.ManagerPledge.pledgeDate }}</span>
+
+
               <d-card-footer class="border-top">
                 <d-badge :key="badgeindex" v-for="(Badge,badgeindex) in Manager.ManagerPledge.badges">{{ Badge }}</d-badge>
               </d-card-footer>

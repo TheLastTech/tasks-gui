@@ -6,16 +6,10 @@ export default function () {
       name: 'profile',
     },
   }, {
-    title: 'Proposal',
+    title: 'Proposals',
     htmlBefore: '<i class="material-icons">view_module</i>',
     to: {
-      name: 'proposal',
+      name: 'browse-proposals',
     },
-  }, {
-    title: 'Errors',
-    htmlBefore: '<i class="material-icons">error</i>',
-    to: {
-      name: 'errors',
-    },
-  }];
+  },];
 }

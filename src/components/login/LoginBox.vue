@@ -27,7 +27,7 @@ export default {
     LoginClick() {
       const { Username, Password } = this.LoginForm;
       const Success = RPCHelper.Login(Username, Password);
-      if (Success) { router.go('/dashboard'); }
+      if (Success) { router.push('/browse-proposals'); }
     },
   },
   name: 'login',

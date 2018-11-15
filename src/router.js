@@ -2,11 +2,12 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-import ComponentsOverview from './views/ComponentsOverview.vue'
-import ProposalOverview from './views/ProposalOverview.vue'
-import UserProfile from './views/UserProfile.vue'
-import Login from './views/Login.vue';
-import CreateProposal from './views/UserPropose.vue'
+import ComponentsOverview from './views/Unused/ComponentsOverview.vue'
+import ProposalOverview from './views/Unused/ProposalOverview.vue'
+import UserProfile from './views/UserProfile/UserProfile.vue'
+import Login from './views/Login/Login.vue';
+import CreateProposal from './views/UserPropose/UserPropose.vue'
+import Proposals from './views/Proposal/Proposal.vue'
 import BrowseProposals from './views/BrowseProposals/BrowseProposals.vue'
 
 Vue.use(Router);
@@ -50,6 +51,11 @@ export default new Router({
       meta: {
         layout: 'Search'
       }
+    }, {
+      path: '/proposal/:pId',
+      name: 'proposal',
+      component: Proposals,
+
     }, {
       path: '/dev-lib',
       name: 'library',

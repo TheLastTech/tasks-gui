@@ -9,8 +9,8 @@
       <d-input @input="FilterChanged" :value="FinanceFilter.TokenMax" />
     </d-input-group>
     <d-input-group prepend="Contributor Min/Max" append="" class="mb-3">
-      <d-input  @input="FilterChanged" :value="FinanceFilter.ContributerMin" />
-      <d-input @input="FilterChanged"  :value="FinanceFilter.ContributerMax" />
+      <d-input  @input="FilterChanged" :value="FinanceFilter.ContributorMin" />
+      <d-input @input="FilterChanged"  :value="FinanceFilter.ContributorMax" />
     </d-input-group>
     <d-input-group prepend="Manager Pledges:&nbsp;&nbsp;&nbsp;&nbsp;" append="" class="mb-3">
       <d-input @input="FilterChanged"  type="number" :value="FinanceFilter.Manager" />
@@ -29,8 +29,8 @@
         FinanceFilter: {
           TokenMin: 0,
           TokenMax: 0,
-          ContributerMin: 0,
-          ContributerMax: 0,
+          ContributorMin: 0,
+          ContributorMax: 0,
           Manager: 0,
         },
         // from https://medium.com/web-development-zone/a-complete-list-of-computer-programming-languages-1d8bc5a891f

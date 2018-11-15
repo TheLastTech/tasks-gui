@@ -23,13 +23,7 @@ const defaultMenuItems = [{
 }, {
   title: 'About',
   to: '#',
-}, {
-  title: 'Products',
-  to: '#',
-}, {
-  title: 'Blog',
-  to: '#',
-}];
+} ];
 
 export default {
   name: 'main-footer',

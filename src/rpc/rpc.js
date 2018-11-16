@@ -72,6 +72,7 @@ export const RpcServer = class RpcFaker {
 // eslint-disable-next-line no-param-reassign
     User.ManagerPledge = {
       blurb: faker.lorem.sentence(),
+      application: faker.lorem.paragraphs(Math.floor(Math.random() * Math.floor(1)) + 22),
       tokens: TokenCount,
       badges: badgelist,
       pledgeDate: RpcServer.GetRandomFormattedDate(),

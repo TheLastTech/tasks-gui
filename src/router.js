@@ -8,6 +8,7 @@ import UserProfile from './views/UserProfile/UserProfile.vue'
 import Login from './views/Login/Login.vue';
 import CreateProposal from './views/UserPropose/UserPropose.vue'
 import Proposals from './views/Proposal/Proposal.vue'
+import ManagerInterviewRooms from './views/Proposal/ManagerInterviewRooms.vue'
 import BrowseProposals from './views/BrowseProposals/BrowseProposals.vue'
 
 Vue.use(Router);
@@ -56,7 +57,13 @@ export default new Router({
       name: 'proposal',
       component: Proposals,
 
-    }, {
+    },
+    {
+      path: '/proposal-managers',
+      name: 'managerinterviewroom',
+      component: ManagerInterviewRooms,
+
+    },{
       path: '/dev-lib',
       name: 'library',
       component: ComponentsOverview

@@ -11,7 +11,6 @@
       </div>
     </div>
 
-
     <d-row>
       <d-col xl="12" lg="12" sm="12">
         <d-card class="card  card-post card-post--1" >
@@ -37,6 +36,9 @@
               </d-tab>
               <d-tab title="Pledge">
                 <proposal-card-pledge-tab/>
+              </d-tab>
+              <d-tab title="Settings">
+                <proposal-card-settings-tab />
               </d-tab>
             </d-tabs>
             <d-button-group>
@@ -74,6 +76,7 @@
   import ProposalCardPledgeTab from './Card/ProposalCardPledgeTab.vue';
   import ProposalCardFinanceTab from './Card/ProposalCardFinanceTab.vue';
   import ProposalCardManagerTab from './Card/ProposalCardManagerTab.vue';
+  import ProposalCardSettingsTab from "./Card/ProposalCardSettingsTab";
 
 
   // Second Row of posts
@@ -81,6 +84,7 @@
 
   export default {
     components: {
+      ProposalCardSettingsTab,
       ProposalCardManagerTab,
       ProposalCardFinanceTab,
       ProposalCardPledgeTab,

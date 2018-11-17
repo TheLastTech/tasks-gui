@@ -6,9 +6,9 @@ import ComponentsOverview from './views/Unused/ComponentsOverview.vue'
 import ProposalOverview from './views/Unused/ProposalOverview.vue'
 import UserProfile from './views/UserProfile/UserProfile.vue'
 import Login from './views/Login/Login.vue';
+import ManagerInterviewRooms from './views/Proposal/ManagerInterviewRooms.vue'
 import CreateProposal from './views/UserPropose/UserPropose.vue'
 import Proposals from './views/Proposal/Proposal.vue'
-import ManagerInterviewRooms from './views/Proposal/ManagerInterviewRooms.vue'
 import BrowseProposals from './views/BrowseProposals/BrowseProposals.vue'
 
 Vue.use(Router);
@@ -39,7 +39,7 @@ export default new Router({
     },
     {
       path: '/proposeproj',
-      name: 'proposal',
+      name: 'proposalproject',
       component: CreateProposal
     }, {
       path: '/proposal-overview',
@@ -57,16 +57,19 @@ export default new Router({
       name: 'proposal',
       component: Proposals,
 
+    }, {
+      path: '/dev-lib',
+      name: 'library',
+      component: ComponentsOverview
     },
     {
       path: '/proposal-managers',
       name: 'managerinterviewroom',
       component: ManagerInterviewRooms,
+      meta: {
+        layout: 'BrowseManager'
+      }
 
-    },{
-      path: '/dev-lib',
-      name: 'library',
-      component: ComponentsOverview
     },
   ],
 });

@@ -14,43 +14,43 @@
 </template>
 
 <script>
-const defaultMenuItems = [{
-  title: 'Home',
-  to: '#',
-}, {
-  title: 'Services',
-  to: '#',
-}, {
-  title: 'About',
-  to: '#',
-} ];
+  const defaultMenuItems = [{
+    title: 'Home',
+    to: '#',
+  }, {
+    title: 'Services',
+    to: '#',
+  }, {
+    title: 'About',
+    to: '#',
+  }];
 
-export default {
-  name: 'main-footer',
-  props: {
-    /**
+  export default {
+    name: 'main-footer',
+    props: {
+      /**
        * The footer menu items.
        */
-    menuItems: {
-      type: Array,
-      default() {
-        return defaultMenuItems;
+      menuItems: {
+        type: Array,
+        default() {
+          return defaultMenuItems;
+        },
       },
-    },
-    /**
+      /**
        * The copyright information.
        */
-    copyright: {
-      type: String,
-      default: 'Copyright © 2018 React-Coder',
-    },
-    /**
+      copyright: {
+        type: String,
+        default: 'Copyright © 2018 React-Coder',
+      },
+      /**
        * Whether the footer should be wrapped in a container, or not.
        */
-    contained: {
-      type: Boolean,
-      default: false,
+      contained: {
+        type: Boolean,
+        default: false,
+      },
     },
-  },
-};
+  };
 </script>

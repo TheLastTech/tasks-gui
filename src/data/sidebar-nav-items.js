@@ -11,5 +11,5 @@ export default function () {
     to: {
       name: 'browse-proposals',
     },
-  },];
+  }];
 }

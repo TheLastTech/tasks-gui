@@ -13,7 +13,7 @@
 
     <d-row>
       <d-col xl="12" lg="12" sm="12">
-        <d-card class="card  card-post card-post--1" >
+        <d-card class="card  card-post card-post--1">
           <div class="card-post__image" :style="{ backgroundImage: 'url(\'' + Proposal.backgroundImage + '\')' }">
             <d-badge pill :class="['card-post__category', 'bg-' + Proposal.categoryTheme ]">{{ Proposal.category }}
             </d-badge>
@@ -23,7 +23,7 @@
                 }}</a>
             </div>
           </div>
-          <d-card-body >
+          <d-card-body>
             <d-tabs @input="(tab)=>TabChanged(Proposal,tab)" card pills>
               <d-tab title="Project Overview" active>
                 <proposal-card-overview-tab :post="Proposal"/>
@@ -31,15 +31,16 @@
               <d-tab title="Finances">
                 <proposal-card-finance-tab :post="Proposal"/>
               </d-tab>
-              <d-tab title="Manager">
-                <proposal-card-manager-tab :PledgeManager="PledgeManagers"/>
+              <d-tab title="Manager" :no-body="true" @click="GotoManagers">
+
               </d-tab>
               <d-tab title="Pledge">
                 <proposal-card-pledge-tab/>
               </d-tab>
               <d-tab title="Settings">
-                <proposal-card-settings-tab />
+                <proposal-card-settings-tab/>
               </d-tab>
+
             </d-tabs>
             <d-button-group>
               <d-button href="https://twitter.com/intent/tweet?button_hashtag=ThisProjectName&ref_src=twsrc%5Etfw"
@@ -71,12 +72,13 @@
 
 <script>
   // First Row of Posts
-  import {RpcServer} from '@/rpc/rpc';
+  import { RpcServer } from '@/rpc/rpc';
+  import router from '@/router';
   import ProposalCardOverviewTab from './Card/ProposalCardOverviewTab.vue';
   import ProposalCardPledgeTab from './Card/ProposalCardPledgeTab.vue';
   import ProposalCardFinanceTab from './Card/ProposalCardFinanceTab.vue';
   import ProposalCardManagerTab from './Card/ProposalCardManagerTab.vue';
-  import ProposalCardSettingsTab from "./Card/ProposalCardSettingsTab";
+  import ProposalCardSettingsTab from './Card/ProposalCardSettingsTab';
 
 
   // Second Row of posts
@@ -99,7 +101,9 @@
 
 
     methods: {
-
+      GotoManagers() {
+               router.push('/proposal-managers');
+      },
       TabChanged(post, idx, tab) {
         if (tab === 2) // all we get is index 0 based
         {

@@ -63,6 +63,11 @@ export const RpcServer = class RpcFaker {
   }
 
   static GetUserPledgeAsManager(User) {
+    const Application = [];
+    const ApplicationParagraphCount = Math.floor(Math.random() * 12);
+    for(let i = 0; i < ApplicationParagraphCount; i++){
+      Application.push(faker.lorem.paragraphs(3));
+    }
     const TokenCount = Math.floor(Math.random() * 1000);
     const BadgeCount = Math.floor(Math.random() * 20);
     const badgelist = [];
@@ -72,7 +77,7 @@ export const RpcServer = class RpcFaker {
 // eslint-disable-next-line no-param-reassign
     User.ManagerPledge = {
       blurb: faker.lorem.sentence(),
-      application: faker.lorem.paragraphs(Math.floor(Math.random() * Math.floor(1)) + 22),
+      application: Application,
       tokens: TokenCount,
       badges: badgelist,
       pledgeDate: RpcServer.GetRandomFormattedDate(),
@@ -120,7 +125,7 @@ export default class RPCHelper {
     try {
       return await RPCHelper.FetchPostJson(
         RPCHelper.LoginPath,
-        {Username: User, Password: Pass},
+        { Username: User, Password: Pass },
       );
     } catch (e) {
       ErrorHelper.LogAndReportError('Rpc Login', e);

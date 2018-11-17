@@ -15,8 +15,15 @@ import router from './router';
 import Default from '@/layouts/Default.vue';
 import Search from '@/layouts/Search.vue';
 import NoAuth from '@/layouts/NoAuth.vue';
+import BrowseManagers from '@/layouts/BrowseManagers.vue'
+//fonts
+
+import typeface_merriweather from "typeface-merriweather";
+import typeface_archivo_narrow from "typeface-archivo-narrow";
+
 ShardsVue.install(Vue);
 
+Vue.component('BrowseManager-layout',BrowseManagers)
 Vue.component('default-layout', Default);
 Vue.component('Search-layout', Search);
 Vue.component('NoAuth-layout', NoAuth);

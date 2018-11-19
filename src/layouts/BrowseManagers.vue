@@ -2,18 +2,18 @@
   <d-container fluid>
     <d-row>
       <!-- Main Sidebar -->
-      <main-sidebar :items="sidebarItems" />
+      <proposal-sidebar :items="sidebarItems"/>
 
-      <d-col class="main-content offset-lg-2 offset-md-3 p-0" tag="main" lg="10" md="9" sm="12">
+      <d-col class="main-content offset-lg-2 offset-md-3" tag="main" lg="10" md="9" sm="12">
 
         <!-- Main Navbar -->
-        <main-navbar />
+        <main-navbar/>
 
         <!-- Content -->
-        <slot />
+        <slot/>
 
         <!-- Main Footer -->
-        <main-footer />
+        <main-footer/>
       </d-col>
 
     </d-row>
@@ -21,25 +21,38 @@
 </template>
 
 <script>
-import getSidebarItems from '@/data/sidebar-nav-items';
 
-// Main layout components
-import MainNavbar from '@/components/layout/ProposalManagerNavBar/MainNavbar.vue';
-import MainSidebar from '@/components/layout/MainSidebar/MainSidebar.vue';
-import MainFooter from '@/components/layout/MainFooter/MainFooter.vue';
 
-export default {
-  name: 'analytics',
-  components: {
-    MainNavbar,
-    MainSidebar,
-    MainFooter,
-  },
-  data() {
-    return {
-      sidebarItems: getSidebarItems(),
-    };
+  // Main layout components
+  import MainNavbar from '@/components/layout/MainNavbar/ProposalNavbar.vue';
+  import ProposalSidebar from '@/components/layout/MainSidebar/ProposalSidebar.vue';
+  import MainFooter from '@/components/layout/MainFooter/MainFooter.vue';
+
+const ReturnHome = {
+  title: 'Back To Propsal',
+  htmlBefore: '<i class="material-icons">arrow_back</i>',
+  to: {
+    name: 'profile',
   },
 };
+  export default {
+    name: 'analytics',
+    components: {
+      MainNavbar,
+      ProposalSidebar,
+      MainFooter,
+    },
+    data() {
+      return {
+        sidebarItems: [ReturnHome, {
+          title: 'Q/A with this Manager',
+          htmlBefore: '<i class="material-icons">person</i>',
+          to: {
+            name: 'profile',
+          },
+        }],
+      };
+},
+  };
 </script>
 

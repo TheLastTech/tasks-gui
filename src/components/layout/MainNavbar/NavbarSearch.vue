@@ -9,13 +9,13 @@
   </d-form>
 </template>
 <script>
-  import bus from "@/bus/bus";
+
 
   export default {
     methods:
       {
         EmitTopSearchInput(e) {
-          bus.$emit('NavBarSearchType', e);
+          this.$eventHub.$emit('NavBarSearchType', e);
         },
       },
   };

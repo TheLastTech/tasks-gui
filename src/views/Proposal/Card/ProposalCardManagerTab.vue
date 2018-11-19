@@ -45,7 +45,7 @@
 
 <script>
   import { Carousel, Slide } from 'vue-carousel';
-  import { RpcServer } from '@/rpc/rpc';
+
 
   export default {
     components: { Carousel, Slide },
@@ -55,7 +55,7 @@
         MouseDrag: false,
         sliding: null,
         CurrentPage: 0,
-        PledgeManagers: RpcServer.GetManagers(),
+        PledgeManagers: this.$RpcServer.GetManagers(),
       };
     },
     methods: {

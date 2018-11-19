@@ -33,7 +33,7 @@
         <d-dropdown-item class="notification__all text-center">View all Notifications</d-dropdown-item>
       </d-collapse>
     </li>
-    <li class="nav-item dropdown">
+    <li class="nav-item dropdown d-none invisible ">
       <a class="nav-link dropdown-toggle text-nowrap px-3" v-d-toggle.user-actions>
         <img class="user-avatar rounded-circle mr-2" src="@/assets/images/avatars/ari.jpg" alt="User Avatar"> <span class="d-none d-md-inline-block">Arian</span>
       </a>

@@ -20,7 +20,7 @@
   }
 </style>
 <script>
-  import Bus from '@/bus/bus.js';
+
 
   export default {
     data() {
@@ -29,10 +29,10 @@
       };
     },
     mounted() {
-      Bus.$on('VisibleManagerChange', this.ManagerChanged.bind(this));
+      this.$eventHub.$on('VisibleManagerChange', this.ManagerChanged.bind(this));
     },
     beforeDestroy() {
-      Bus.$off('VisibleManagerChange', this.NavBarSearchFunction);
+      this.$eventHub.$off('VisibleManagerChange', this.NavBarSearchFunction);
     },
     methods: {
 

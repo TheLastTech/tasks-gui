@@ -1,5 +1,4 @@
 .DS_Store
-node_modules
 /dist
 
 # local env files
@@ -24,3 +23,5 @@ CHANGELOG.md
 LICENSE
 __MACOSX/
 yarn.lock
+node_modules/
+

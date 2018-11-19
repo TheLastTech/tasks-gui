@@ -10,7 +10,6 @@ import '@/assets/scss/date-range.scss';
 // Core
 import App from './App.vue';
 import router from './router';
-
 // Layouts
 import Default from '@/layouts/Default.vue';
 import Search from '@/layouts/Search.vue';
@@ -20,6 +19,7 @@ import BrowseManagers from '@/layouts/BrowseManagers.vue'
 
 import typeface_merriweather from "typeface-merriweather";
 import typeface_archivo_narrow from "typeface-archivo-narrow";
+import {RpcServer} from "./rpc/rpc";
 
 ShardsVue.install(Vue);
 
@@ -30,6 +30,7 @@ Vue.component('NoAuth-layout', NoAuth);
 
 Vue.config.productionTip = false;
 Vue.prototype.$eventHub = new Vue();
+Vue.prototype.$RpcServer = RpcServer
 
 new Vue({
   router,

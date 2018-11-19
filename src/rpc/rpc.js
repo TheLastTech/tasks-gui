@@ -11,13 +11,6 @@ export const RpcServer = class RpcFaker {
   }
 
 
-  static GetComment() {
-    return {
-      text: faker.lorem.paragraphs(),
-      slug: faker.lorem.slug(),
-    };
-  }
-
   static GetProposedProject() {
     const rng = Math.floor(Math.random() * 26);
     const rng2 = Math.floor(Math.random() * 26);
@@ -46,12 +39,19 @@ export const RpcServer = class RpcFaker {
     return Proposals;
   }
 
-  static GetComments(Count = 20) {
-    const Comments = [];
-    for (let i = 0; i < Count; i++) {
-      Comments.push(RpcServer.GetComment());
+  static GetQA(Depth = 0) {
+
+    if (Depth > 1) return [];
+    const RandomCount = Math.floor(Math.random() * 3)+1
+    const QaThread = [];
+    for (let i = 0; i < RandomCount; i++) {
+      const thread = RpcServer.GetQaThread( Depth);
+      if (thread) {
+        QaThread.push(thread);
+      }
     }
-    return Comments;
+
+    return QaThread;
   }
 
   static GetManagers(Count = 20) {
@@ -65,7 +65,7 @@ export const RpcServer = class RpcFaker {
   static GetUserPledgeAsManager(User) {
     const Application = [];
     const ApplicationParagraphCount = Math.floor(Math.random() * 12);
-    for(let i = 0; i < ApplicationParagraphCount; i++){
+    for (let i = 0; i < ApplicationParagraphCount; i++) {
       Application.push(faker.lorem.paragraphs(3));
     }
     const TokenCount = Math.floor(Math.random() * 1000);
@@ -81,8 +81,26 @@ export const RpcServer = class RpcFaker {
       tokens: TokenCount,
       badges: badgelist,
       pledgeDate: RpcServer.GetRandomFormattedDate(),
+      PledgeQA: RpcServer.GetQA(),
     };
     return User;
+  }
+
+  static GetQaThread( Depth) {
+
+
+
+    const User = RpcServer.GetUser();
+    const CommentParagraphs = [];
+
+    const CommentParagraphCount = Math.floor(Math.random() * 12) + 1;
+    const CommentTime = RpcServer.GetRandomFormattedDate();
+    for (let i = 0; i < CommentParagraphCount; i++) {
+      CommentParagraphs.push(faker.lorem.paragraphs(3));
+    }
+    return {
+      User, CommentParagraphs, CommentTime, Depth,
+    };
   }
 
   static GetUser() {

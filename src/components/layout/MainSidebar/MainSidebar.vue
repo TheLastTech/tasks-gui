@@ -69,6 +69,7 @@ export default {
     };
   },
   created() {
+
     this.$eventHub.$on('toggle-sidebar', this.handleToggleSidebar);
   },
   beforeDestroy() {
@@ -76,6 +77,7 @@ export default {
   },
   methods: {
     handleToggleSidebar() {
+      debugger;
       this.sidebarVisible = !this.sidebarVisible;
     },
   },

@@ -83,7 +83,7 @@
   import BrowseProposalCardFinanceTab from './Card/BrowseProposalCardFinanceTab.vue';
   import BrowseProposalFilter from './BrowseProposalFilter.vue';
   import BrowseProposalCardManagerTab from './Card/BrowseProposalCardManagerTab';
-  import bus from '@/bus/bus.js';
+
 
   const PostsListOne = RpcServer.GetProposals(12);
   const PledgeManagers = {};
@@ -124,11 +124,11 @@
       };
     },
     beforeDestroy() {
-      bus.$off('NavBarSearchType', this.NavBarSearchFunction);
+      this.$eventHub.$off('NavBarSearchType', this.NavBarSearchFunction);
     },
     mounted() {
       this.NavBarSearchFunction = this.NavBarSearchType.bind(this);
-      bus.$on('NavBarSearchType', this.NavBarSearchFunction);
+      this.$eventHub.$on('NavBarSearchType', this.NavBarSearchFunction);
     },
     computed: {
       LanguageFilterString: {

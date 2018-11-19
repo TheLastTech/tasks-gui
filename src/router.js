@@ -6,7 +6,10 @@ import ComponentsOverview from './views/Unused/ComponentsOverview.vue'
 import ProposalOverview from './views/Unused/ProposalOverview.vue'
 import UserProfile from './views/UserProfile/UserProfile.vue'
 import Login from './views/Login/Login.vue';
+
+import ManagerQaRooms from './views/Proposal/ManagerQaRooms.vue'
 import ManagerInterviewRooms from './views/Proposal/ManagerInterviewRooms.vue'
+import ManagerList from './views/Proposal/ManagerList.vue'
 import CreateProposal from './views/UserPropose/UserPropose.vue'
 import Proposals from './views/Proposal/Proposal.vue'
 import BrowseProposals from './views/BrowseProposals/BrowseProposals.vue'
@@ -61,11 +64,27 @@ export default new Router({
       path: '/dev-lib',
       name: 'library',
       component: ComponentsOverview
+    },{
+      path: '/proposal-managers-list',
+      name: 'managerslist',
+      component: ManagerList,
+      meta: {
+        layout: 'BrowseManager'
+      }
+
     },
     {
       path: '/proposal-managers',
       name: 'managerinterviewroom',
       component: ManagerInterviewRooms,
+      meta: {
+        layout: 'BrowseManager'
+      }
+
+    },{
+      path: '/proposal-managers-qa',
+      name: 'managerqaroom',
+      component: ManagerQaRooms,
       meta: {
         layout: 'BrowseManager'
       }

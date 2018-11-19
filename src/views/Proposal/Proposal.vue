@@ -72,7 +72,7 @@
 
 <script>
   // First Row of Posts
-  import { RpcServer } from '@/rpc/rpc';
+
   import router from '@/router';
   import ProposalCardOverviewTab from './Card/ProposalCardOverviewTab.vue';
   import ProposalCardPledgeTab from './Card/ProposalCardPledgeTab.vue';
@@ -94,8 +94,8 @@
     },
     data() {
       return {
-        Proposal: RpcServer.GetProposals(1)[0],
-        PledgeManagers: RpcServer.GetManagers(),
+        Proposal: this.$RpcServer.GetProposals(1)[0],
+        PledgeManagers: this.$RpcServer.GetManagers(),
       };
     },
 
@@ -107,7 +107,7 @@
       TabChanged(post, idx, tab) {
         if (tab === 2) // all we get is index 0 based
         {
-          this.PledgeManagers = RpcServer.GetManagers();
+          this.PledgeManagers = $RpcServer.GetManagers();
         }
       },
 

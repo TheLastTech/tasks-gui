@@ -17,14 +17,9 @@
     </nav>
 
 
-    <carousel style="min-width:50vw" class="h-100" :adjustableHeight="true" :per-page="1" @pageChange="SlideClick"
-              :navigationNextLabel="NextText"
-              :value="CurrentPage">
-      <slide class="w-100" v-for="(Manager,idx) in PledgeManagers" :key="idx">
-        <q-a-section  :PledgeQA="Manager.ManagerPledge.PledgeQA"/>
-      </slide>
 
-    </carousel>
+        <q-a-section v-if="Manager.ManagerPledge"  :PledgeQA="Manager.ManagerPledge.PledgeQA"/>
+
 
 
   </div>
@@ -45,6 +40,7 @@
         SelectedManager: null,
         CurrentSlide: 0,
         sliding: null,
+        Manager:{},
         CurrentPage: 0,
         UserVotedOn: null,
         PledgeManagers: this.$RpcServer.GetManagers(),
@@ -53,7 +49,7 @@
     },
 
     mounted() {
-
+      this.Manager = this.PledgeManagers[this.CurrentSlide];
       this.$eventHub.$emit('VisibleManagerChange', this.PledgeManagers[0]);
     },
 
@@ -77,20 +73,18 @@
         if (this.CurrentSlide === this.PledgeManagers.length) this.CurrentSlide = -1;
 
         this.CurrentPage = ++this.CurrentSlide;
+        this.Manager = this.PledgeManagers[this.CurrentSlide];
+        this.$eventHub.$emit('VisibleManagerChange', this.Manager);
+
       },
       DecrementSlide() {
         if (this.CurrentSlide === 0) this.CurrentSlide = this.PledgeManagers.length;
         this.CurrentPage = --this.CurrentSlide;
-      },
-      onSlideStart(slide) {
-        this.sliding = true;
-      },
-      SlideClick(slide) {
-        this.CurrentSlide = slide;
+        this.Manager = this.PledgeManagers[this.CurrentSlide];
+        this.$eventHub.$emit('VisibleManagerChange', this.Manager);
 
-        this.$eventHub.$emit('VisibleManagerChange', this.PledgeManagers[slide]);
-        this.sliding = false;
       },
+
     },
   };
 </script>

@@ -32,11 +32,12 @@
       this.$eventHub.$on('VisibleManagerChange', this.ManagerChanged.bind(this));
     },
     beforeDestroy() {
-      this.$eventHub.$off('VisibleManagerChange', this.NavBarSearchFunction);
+    //  this.$eventHub.$off('VisibleManagerChange', this.ManagerChanged.bind(this));
     },
     methods: {
 
       ManagerChanged(NewManager) {
+
         this.Manager = NewManager;
       },
     },

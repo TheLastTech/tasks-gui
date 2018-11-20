@@ -12,8 +12,8 @@ export const RpcServer = class RpcFaker {
 
 
   static GetProposedProject() {
-    const rng = Math.floor(Math.random() * 26);
-    const rng2 = Math.floor(Math.random() * 26);
+    const rng = Math.floor(Math.random() * 9);
+    const rng2 = Math.floor(Math.random() * 9);
     return {
       backgroundImage: `https://picsum.photos/40${rng}/40${rng2}/?random`,
       category: faker.company.catchPhraseNoun(),

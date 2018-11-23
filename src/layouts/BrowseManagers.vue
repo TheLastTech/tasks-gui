@@ -36,7 +36,7 @@ const ReturnHome = {
   },
 };
   export default {
-    name: 'analytics',
+    name: 'BrowseManagers',
     components: {
       MainNavbar,
       ProposalSidebar,

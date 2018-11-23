@@ -1,15 +1,15 @@
 <template>
-  <d-card class="card mb-3">
-    <d-button-group>
-      <d-button @click="ToggleEditor">Reply</d-button>
-      <d-button>Link</d-button>
-    </d-button-group>
+  <div class="mb-3 text-center">
+
+    <d-button class="col-3 btn-manager-qa-thread-reply" @click="ToggleEditor">Reply</d-button>
+
+
     <d-card-body :class="EditorHideClass">
       <d-form class="">
         <div ref="editor" class="add-new-post__editor mb-1"></div>
       </d-form>
     </d-card-body>
-  </d-card>
+  </div>
 </template>
 
 <script>
@@ -20,12 +20,12 @@
     data() {
       return {
         ShowEditor: false,
-        EditorHideClass: ['invisible','d-none'],
+        EditorHideClass: ['invisible', 'd-none'],
       };
     },
     methods: {
       ToggleEditor() {
-        this.EditorHideClass = this.EditorHideClass.length > 0 ? [] : ['invisible','d-none'];
+        this.EditorHideClass = this.EditorHideClass.length > 0 ? [] : ['invisible', 'd-none'];
       },
     },
     mounted() {

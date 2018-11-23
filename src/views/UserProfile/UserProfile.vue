@@ -11,24 +11,30 @@
     <!-- Content -->
     <d-row>
       <d-col lg="4">
-        <upl-user-details />
+       <user-details :person="User" />
       </d-col>
       <d-col lg="8">
-        <upl-user-account-details />
+        <user-account-details :person="User" />
       </d-col>
     </d-row>
   </d-container>
 </template>
 
 <script>
-import UserDetails from '@/components/user-profile-lite/UserDetails.vue';
-import UserAccountDetails from '@/components/user-profile-lite/UserAccountDetails.vue';
+
+import UserAccountDetails from './UserAccountDetails.vue';
+import UserDetails from './UserDetails.vue';
 
 export default {
-  name: 'user-profile-lite',
+  name: 'user-overview',
   components: {
-    uplUserDetails: UserDetails,
-    uplUserAccountDetails: UserAccountDetails,
+    UserAccountDetails,
+    UserDetails,
+  },
+  data() {
+    return {
+      User: this.$RpcServer.GetUser(),
+    };
   },
 };
 </script>

@@ -4,6 +4,7 @@
       <nav class="navbar align-items-stretch navbar-light bg-white flex-md-nowrap border-bottom p-0">
         <a class="navbar-brand w-100 mr-0" href="#" style="line-height: 25px;">
           <div class="d-table m-auto">
+            <img id="main-logo" class="d-inline-block align-top mr-1" style="max-width: 25px;" src="@/assets/images/logo.png" alt="XMN Tasks">
 
             <span v-if="!hideLogoText" class="d-none d-md-inline ml-1">Managers For Proposal #</span>
           </div>
@@ -92,19 +93,17 @@
       this.$eventHub.$on('toggle-sidebar', this.handleToggleSidebar);
     },
     beforeDestroy() {
-      this.$eventHub.$off('toggle-sidebar');
+      this.$eventHub.$off('toggle-sidebar', this.handleToggleSidebar);
     },
     methods: {
       GoBack() {
 
       },
       ViewPreview(){
-
-        this.$eventHub.$emit('toggle-qa-off',true);
+        this.$eventHub.$emit('toggle-qa-off', true);
       },
       ViewQa(){
-
-        this.$eventHub.$emit('toggle-on-qa',true);
+        this.$eventHub.$emit('toggle-on-qa', true);
       },
       handleToggleSidebar() {
         this.sidebarVisible = !this.sidebarVisible;

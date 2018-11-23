@@ -1,0 +1,45 @@
+$logo-color: #0677CC;
+$logo-color-2: #6E8EA2;
+
+%btn-manager {
+  background-color: lighten($logo-color, 5) !important;
+
+  &:hover {
+    background: lighten($logo-color, 2) !important;
+
+    box-shadow: 0px 0.125rem 0.625rem rgba($logo-color-2, .2),
+    0 0.0625rem 0.125rem rgba($logo-color-2, .3);
+  }
+}
+
+%btn-manager-group-btn {
+  background-color: lighten($logo-color, 5) !important;
+
+  &:hover {
+    background: lighten($logo-color, 2) !important;
+
+  }
+}
+
+.btn-manager-selector {
+  @extend %btn-manager;
+
+}
+
+.btn-manager-interview-linkedin {
+  @extend %btn-manager;
+  height: 2vh;
+}
+
+.btn-manager-interview-twitter {
+  @extend %btn-manager;
+}
+
+.btn-select-manager-for-position {
+  @extend %btn-manager;
+}
+
+.btn-manager-qa-thread-reply {
+  @extend %btn-manager-group-btn;
+  height: 2vh;
+}

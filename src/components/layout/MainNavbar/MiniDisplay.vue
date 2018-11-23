@@ -1,9 +1,9 @@
 <template>
 
 
-  <div v-if="Manager.email" class="main-navbar__search w-100 d-none d-block   d-md-flex d-lg-flex">
+  <div class="main-navbar__search w-100 d-none d-block   d-md-flex d-lg-flex">
 
-    <p class="CenteredText"> {{Manager.firstName}} {{Manager.lastName}} {{Manager.email}} </p>
+    <p   v-if="Manager && Manager.email" class="CenteredText"> {{Manager.firstName}} {{Manager.lastName}} {{Manager.email}} </p>
 
   </div>
 </template>

@@ -1,8 +1,3 @@
-// Buttons Adjustments
-
-// White and black button adjustments specific to Shards Dashboard.
-// If you want to use the default Shards buttons just comment the
-// styles below.
 
 .btn-white,
 .btn-black {
@@ -53,6 +48,7 @@
     @include btn-active-modifier($color, $value);
   }
 }
+
 
 
 // Button variation for the accent color.

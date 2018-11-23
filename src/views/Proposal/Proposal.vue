@@ -71,14 +71,16 @@
 </template>
 
 <script>
+  /* eslint-disable brace-style */
+
   // First Row of Posts
 
   import router from '@/router';
-  import ProposalCardOverviewTab from './Card/ProposalCardOverviewTab.vue';
-  import ProposalCardPledgeTab from './Card/ProposalCardPledgeTab.vue';
-  import ProposalCardFinanceTab from './Card/ProposalCardFinanceTab.vue';
-  import ProposalCardManagerTab from './Card/ProposalCardManagerTab.vue';
-  import ProposalCardSettingsTab from './Card/ProposalCardSettingsTab';
+  import ProposalCardOverviewTab from './Tab/ProposalCardOverviewTab.vue';
+  import ProposalCardPledgeTab from './Tab/ProposalCardPledgeTab.vue';
+  import ProposalCardFinanceTab from './Tab/ProposalCardFinanceTab.vue';
+  import ProposalCardManagerTab from './Tab/ProposalCardManagerTab.vue';
+  import ProposalCardSettingsTab from './Tab/ProposalCardSettingsTab.vue';
 
 
   // Second Row of posts
@@ -107,7 +109,7 @@
       TabChanged(post, idx, tab) {
         if (tab === 2) // all we get is index 0 based
         {
-          this.PledgeManagers = $RpcServer.GetManagers();
+          this.PledgeManagers = this.$RpcServer.GetManagers();
         }
       },
 

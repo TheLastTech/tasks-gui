@@ -6,7 +6,7 @@
 
       <!-- User Avatar -->
       <div class="mb-3 mx-auto">
-        <img class="rounded-circle" :src="userDetails.avatar" :alt="userDetails.name" width="110">
+        <img class="rounded-circle" :src="userDetails.avatar"  width="110">
       </div>
 
       <!-- User Name -->
@@ -44,15 +44,7 @@
 </template>
 
 <script>
-const defaultUserDetails = {
-  name: 'Arian Kooshesh',
-  avatar: require('@/assets/images/avatars/ari.jpg'),
-  jobTitle: 'UI Lead Developer',
-  performanceReportTitle: 'Workload',
-  performanceReportValue: 74,
-  metaTitle: 'Description',
-  metaValue: 'I build da webpages that make you de monies',
-};
+
 
 export default {
   name: 'user-details',
@@ -63,7 +55,7 @@ export default {
     userDetails: {
       type: Object,
       default() {
-        return defaultUserDetails;
+        return this.$RpcServer.GetUser();
       },
     },
   },

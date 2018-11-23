@@ -1,5 +1,5 @@
 <template>
-  <d-modal v-if="ShowOverwriteModal" size="lg" @close="ShowOverwriteModal = false">
+  <d-modal v-if="ShowOverwriteModal" size="lg"  >
     <d-modal-header>
       <d-modal-title>You already have a vote for {{SelectedManager.firstName}} {{SelectedManager.lastName}}, would
         you
@@ -23,12 +23,13 @@
   export default {
     name: 'proposal-manager-overwrite-modal',
     props: {
-      Manager: {},
+
       OverwriteManager: {},
       SelectedManager: {},
-      ShowOverwriteModal: {},
 
+      ShowOverwriteModal: { type: Boolean },
 
-    }
-  }
+    },
+
+  };
 </script>

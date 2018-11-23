@@ -42,10 +42,10 @@ export const RpcServer = class RpcFaker {
   static GetQA(Depth = 0) {
 
     if (Depth > 1) return [];
-    const RandomCount = Math.floor(Math.random() * 3)+1
+    const RandomCount = Math.floor(Math.random() * 3) + 1
     const QaThread = [];
     for (let i = 0; i < RandomCount; i++) {
-      const thread = RpcServer.GetQaThread( Depth);
+      const thread = RpcServer.GetQaThread(Depth);
       if (thread) {
         QaThread.push(thread);
       }
@@ -86,8 +86,7 @@ export const RpcServer = class RpcFaker {
     return User;
   }
 
-  static GetQaThread( Depth) {
-
+  static GetQaThread(Depth) {
 
 
     const User = RpcServer.GetUser();
@@ -108,6 +107,7 @@ export const RpcServer = class RpcFaker {
       userName: faker.internet.userName(),
       email: faker.internet.email(),
       color: faker.internet.color(),
+      job: faker.company.catchPhraseNoun(),
       avatar: faker.internet.avatar(),
       firstName: faker.name.firstName(),
       lastName: faker.name.lastName(),
@@ -143,7 +143,7 @@ export default class RPCHelper {
     try {
       return await RPCHelper.FetchPostJson(
         RPCHelper.LoginPath,
-        { Username: User, Password: Pass },
+        {Username: User, Password: Pass},
       );
     } catch (e) {
       ErrorHelper.LogAndReportError('Rpc Login', e);

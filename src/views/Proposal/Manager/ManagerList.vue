@@ -46,10 +46,10 @@
 
     mounted() {
 
-      this.$eventHub.$emit('VisibleManagerChange', this.PledgeManagers[0]);
+      this.$eventHub.$emit('VisibleManagerChange', null);
     },
     beforeDestroy() {
-      this.$eventHub.$off('VisibleManagerChange');
+
 
     },
     methods: {

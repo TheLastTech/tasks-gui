@@ -3,7 +3,7 @@
 
     <!-- Card Header -->
     <d-card-header class="border-bottom">
-      <h6 class="m-0">{{ title }}</h6>
+      <h6 class="m-0 UserAccountDetailsHeader">{{ person.firstName }} {{ person.lastName }} ({{ person.job }})</h6>
     </d-card-header>
 
     <d-list-group flush>
@@ -14,43 +14,28 @@
               <d-form-row>
 
                 <!-- First Name -->
-                <d-col md="6" class="form-group">
-                  <span class="">First Name:</span>
-                  <span> {{ person.firstName }} </span>
-                </d-col>
+                <user-account-details-first-name :person="person"/>
 
                 <!-- Last Name -->
-                <d-col md="6" class="form-group">
-                  <span class="">Last Name:</span>
-                  <span> {{ person.lastName }} </span>
-                </d-col>
+                <user-account-details-last-name :person="person"/>
 
               </d-form-row>
 
               <d-form-row>
 
                 <!-- Email -->
-                <d-col md="6" class="form-group">
-                  <span class="">Email:</span>
-                  <span> {{ person.email }} </span>
-                </d-col>
+                <user-account-details-email :person="person"/>
 
-                <!-- Password -->
-                <d-col md="6" class="form-group">
-                  <span class="">Favorite Color:</span>
-                  <span :style="{backgroundColor:person.color }">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
-                </d-col>
+                <!-- Threw this in for a random data field -->
+                <user-account-details-extra-info :person="person"/>
 
               </d-form-row>
 
 
               <d-form-row>
 
-                <!-- Description -->
-                <d-col md="12" class="form-group">
-                  <span class="">Title</span>
-                  <span> {{ person.job}} </span>
-                </d-col>
+                <!-- Job Title -->
+                <user-account-details-job-title :person="person"/>
               </d-form-row>
 
               <d-button type="submit" class="btn-accent btn-block">Invite User to Apply</d-button>
@@ -64,14 +49,27 @@
 </template>
 
 <script>
+  import UserAccountDetailsFirstName from './UserAccountDetails/UserAccountDetailsFirstName.vue';
+  import UserAccountDetailsLastName from './UserAccountDetails/UserAccountDetailsLastName.vue';
+  import UserAccountDetailsEmail from './UserAccountDetails/UserAccountDetailsEmail.vue';
+  import UserAccountDetailsExtraInfo from './UserAccountDetails/UserAccountDetailsExtraInfo.vue';
+  import UserAccountDetailsJobTitle from './UserAccountDetails/UserAccountDetailsJobTitle.vue';
+
   export default {
     name: 'user-account-details',
+    components: {
+      UserAccountDetailsJobTitle,
+      UserAccountDetailsExtraInfo,
+      UserAccountDetailsEmail,
+      UserAccountDetailsLastName,
+      UserAccountDetailsFirstName,
+    },
     props: {
       /**
        * The component title.
        */
       person: {
-        type: Object
+        type: Object, required: true,
 
       },
     },

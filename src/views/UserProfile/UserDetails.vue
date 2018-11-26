@@ -10,10 +10,10 @@
       </div>
 
       <!-- User Name -->
-      <h4 class="mb-0">{{ person.firstName }} {{ person.lastName }}</h4>
+      <h4 class="mb-0 UserAccountDetailsHeader">{{ person.firstName }} {{ person.lastName }}</h4>
 
       <!-- User Job Title -->
-      <span class="text-muted d-block mb-2">{{ person.job }}</span>
+      <span class="text-muted UserAccountDetailsEditorLabel d-block mb-2">{{ person.job }}</span>
 
       <!-- User Follow -->
       <d-button pill outline size="sm" class="mb-2"><i class="material-icons mr-1">person_add</i> Follow</d-button>

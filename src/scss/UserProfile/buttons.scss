@@ -1,0 +1,27 @@
+$user-account-details-editor-text-button-font-weight: 500 !default;
+$user-account-details-editor-text-button-font-size: 1.1875rem !default;
+$user-account-details-editor-text-label-font-size: 1.1875rem !default;
+$user-account-details-editor-text-letter-spacing: 0.0625rem !default;
+.UserAccountDetailsEditorTextButton{
+  cursor:pointer;
+  color:$logo-color;
+  letter-spacing: $user-account-details-editor-text-letter-spacing;
+  font-weight: $user-account-details-editor-text-button-font-weight;
+  font-size: $user-account-details-editor-text-button-font-size;
+
+}
+.UserAccountDetailsEditorLabel{
+  font-weight: $error-tpl-content-subheading-font-weight;
+  font-size: $user-account-details-editor-text-label-font-size;
+
+  letter-spacing: $user-account-details-editor-text-letter-spacing;
+  color: $logo-color-2;
+}
+
+.UserAccountDetailsHeader{
+  font-weight: $error-tpl-content-subheading-font-weight;
+  font-size: $user-account-details-editor-text-label-font-size;
+
+  letter-spacing: $user-account-details-editor-text-letter-spacing;
+  color: $logo-color-2;
+}

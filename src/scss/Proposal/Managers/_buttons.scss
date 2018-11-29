@@ -28,7 +28,7 @@ $logo-color-2: #6E8EA2;
 
 .btn-manager-interview-linkedin {
   @extend %btn-manager;
-  height: 2vh;
+
 }
 
 .btn-manager-interview-twitter {
@@ -41,5 +41,5 @@ $logo-color-2: #6E8EA2;
 
 .btn-manager-qa-thread-reply {
   @extend %btn-manager-group-btn;
-  height: 2vh;
+
 }

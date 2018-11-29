@@ -34,9 +34,7 @@
       </d-collapse>
     </li>
     <li class="nav-item dropdown d-none invisible ">
-      <a class="nav-link dropdown-toggle text-nowrap px-3" v-d-toggle.user-actions>
-        <img class="user-avatar rounded-circle mr-2" src="@/assets/images/avatars/ari.jpg" alt="User Avatar"> <span class="d-none d-md-inline-block">Arian</span>
-      </a>
+
       <d-collapse id="user-actions" class="dropdown-menu dropdown-menu-small">
         <d-dropdown-item><i class="material-icons">&#xE7FD;</i> Profile</d-dropdown-item>
         <d-dropdown-item><i class="material-icons">&#xE8B8;</i> My Proposals </d-dropdown-item>

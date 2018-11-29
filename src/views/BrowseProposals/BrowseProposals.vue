@@ -12,9 +12,9 @@
     </div>
     <d-row>
       <d-col lg="12" md="12" sm="12" class="mb-4">
-        <browse-proposal-filter @LanguageFiltersChanged="LanguageFiltersChanged"
+    <!--    <browse-proposal-filter @LanguageFiltersChanged="LanguageFiltersChanged"
                                 @JobSkillFiltersChanged="JobSkillFiltersChange"
-                                @FinanceFiltersChanged="FinanceFiltersChanged"/>
+                                @FinanceFiltersChanged="FinanceFiltersChanged"/> -->
       </d-col>
     </d-row>
     <!-- First Row of Posts -->
@@ -31,16 +31,17 @@
                 }}</a>
             </div>
           </div>
-          <d-card-body>
-            <d-tabs @input="(tab)=>TabChanged(Proposal,idx,tab)" card pills vertical>
-              <d-tab title="Project Overview" active>
+          <d-card-body class="mx-auto text-center w-100">
+
+            <d-tabs @input="(tab)=>TabChanged(Proposal,idx,tab)" card pills nav-class="list-inline mx-auto justify-content-center" content-class="h-100">
+              <d-tab title="Overview" active>
                 <browse-proposal-card-overview-tab :post="Proposal"/>
               </d-tab>
               <d-tab title="Finances">
                 <browse-proposal-card-finance-tab :post="Proposal"/>
               </d-tab>
               <d-tab title="Manager">
-                <browse-proposal-card-manager-tab :PledgeManager="PledgeManagers[idx]"/>
+                <browse-proposal-card-manager-preview-tab :PledgeManager="PledgeManagers[idx]"/>
               </d-tab>
               <d-tab title="Pledge">
                 <browse-proposal-card-pledge-tab/>
@@ -58,14 +59,7 @@
                 <i class="fab fa-2x fa-slack"></i>
               </d-button>
             </d-button-group>
-            <d-card-footer class="border-top d-flex">
 
-              <div class="my-auto ml-auto">
-                <d-button size="sm" class="btn-white">
-                  <i class="far fa-bookmark mr-1"></i> Bookmark
-                </d-button>
-              </div>
-            </d-card-footer>
           </d-card-body>
         </d-card>
       </d-col>
@@ -81,8 +75,9 @@
   import BrowseProposalCardOverviewTab from './Card/BrowseProposalCardOverviewTab.vue';
   import BrowseProposalCardPledgeTab from './Card/BrowseProposalCardPledgeTab.vue';
   import BrowseProposalCardFinanceTab from './Card/BrowseProposalCardFinanceTab.vue';
+  import BrowseProposalCardManagerPreviewTab from './Card/BrowseProposalCardManagerPreviewTab.vue'
   import BrowseProposalFilter from './BrowseProposalFilter.vue';
-  import BrowseProposalCardManagerTab from './Card/BrowseProposalCardManagerTab';
+  import BrowseProposalCardManagerTab from './Card/BrowseProposalCardManagerTab.vue';
 
 
   const PostsListOne = RpcServer.GetProposals(12);
@@ -106,6 +101,7 @@
       BrowseProposalCardFinanceTab,
       BrowseProposalCardPledgeTab,
       BrowseProposalCardOverviewTab,
+      BrowseProposalCardManagerPreviewTab
     },
     data() {
       return {

@@ -25,7 +25,7 @@
           </div>
           <d-card-body>
             <d-tabs @input="(tab)=>TabChanged(Proposal,tab)" card pills>
-              <d-tab title="Project Overview" active>
+              <d-tab title="Overview" active>
                 <proposal-card-overview-tab :post="Proposal"/>
               </d-tab>
               <d-tab title="Finances">

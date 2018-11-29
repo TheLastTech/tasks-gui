@@ -46,8 +46,8 @@
       this.$eventHub.$emit('VisibleManagerChange', this.PledgeManagers[0]);
     },
     beforeDestroy() {
-      this.$eventHub.$off('toggle-on-qa', this.ShowQaSection.bind(this));
-      this.$eventHub.$off('toggle-off-qa', this.ShowPreviewSection.bind(this));
+   //   this.$eventHub.$off('toggle-on-qa', this.ShowQaSection.bind(this));
+    //  this.$eventHub.$off('toggle-off-qa', this.ShowPreviewSection.bind(this));
     },
     methods: {
       ShowQaSection() {

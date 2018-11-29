@@ -124,7 +124,7 @@
       };
     },
     beforeDestroy() {
-      this.$eventHub.$off('NavBarSearchType', this.NavBarSearchFunction);
+    //  this.$eventHub.$off('NavBarSearchType', this.NavBarSearchFunction);
     },
     mounted() {
       this.NavBarSearchFunction = this.NavBarSearchType.bind(this);

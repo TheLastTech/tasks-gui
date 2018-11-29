@@ -73,7 +73,7 @@ export default {
     this.$eventHub.$on('toggle-sidebar', this.handleToggleSidebar);
   },
   beforeDestroy() {
-    this.$eventHub.$off('toggle-sidebar');
+ //   this.$eventHub.$off('toggle-sidebar');
   },
   methods: {
     handleToggleSidebar() {

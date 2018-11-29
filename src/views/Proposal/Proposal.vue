@@ -3,10 +3,8 @@
     <!-- Page Header -->
     <div class="page-header row no-gutters py-4">
       <div class="col-12 col-sm-4 text-center text-sm-left mb-0">
-        <span class="text-uppercase page-subtitle">{{ Proposal.title }}</span>
-        <h3 class="page-title">
+        <span class="text-uppercase page-subtitle">{{ Proposal.title }} </span>
 
-        </h3>
 
       </div>
     </div>
@@ -14,26 +12,16 @@
     <d-row>
       <d-col xl="12" lg="12" sm="12">
         <d-card class="card  card-post card-post--1">
-          <div class="card-post__image" :style="{ backgroundImage: 'url(\'' + Proposal.backgroundImage + '\')' }">
-            <d-badge pill :class="['card-post__category', 'bg-' + Proposal.categoryTheme ]">{{ Proposal.category }}
-            </d-badge>
-            <div class="card-post__author d-flex">
-              <a href="#" class="card-post__author-avatar card-post__author-avatar--small"
-                 :style="{ backgroundImage: 'url(\'' + Proposal.authorAvatar + '\')' }">Written by {{ Proposal.author
-                }}</a>
-            </div>
-          </div>
-          <d-card-body>
-            <d-tabs @input="(tab)=>TabChanged(Proposal,tab)" card pills>
+          <proposal-header :proposal="Proposal"/>
+          <d-card-body class="mx-auto text-center w-100">
+            <d-tabs @input="(tab)=>TabChanged(Proposal,tab)" card pills  nav-class="list-inline mx-auto justify-content-center" content-class="h-100">
               <d-tab title="Overview" active>
                 <proposal-card-overview-tab :post="Proposal"/>
               </d-tab>
               <d-tab title="Finances">
                 <proposal-card-finance-tab :post="Proposal"/>
               </d-tab>
-              <d-tab title="Manager" :no-body="true" @click="GotoManagers">
 
-              </d-tab>
               <d-tab title="Pledge">
                 <proposal-card-pledge-tab/>
               </d-tab>
@@ -79,8 +67,8 @@
   import ProposalCardOverviewTab from './Tab/ProposalCardOverviewTab.vue';
   import ProposalCardPledgeTab from './Tab/ProposalCardPledgeTab.vue';
   import ProposalCardFinanceTab from './Tab/ProposalCardFinanceTab.vue';
-  import ProposalCardManagerTab from './Tab/ProposalCardManagerTab.vue';
   import ProposalCardSettingsTab from './Tab/ProposalCardSettingsTab.vue';
+  import ProposalHeader from "./ProposalHeader";
 
 
   // Second Row of posts
@@ -88,8 +76,8 @@
 
   export default {
     components: {
+      ProposalHeader,
       ProposalCardSettingsTab,
-      ProposalCardManagerTab,
       ProposalCardFinanceTab,
       ProposalCardPledgeTab,
       ProposalCardOverviewTab,

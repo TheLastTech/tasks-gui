@@ -29,34 +29,42 @@
     <div class="nav-wrapper">
       <d-nav class="flex-column">
         <li class="nav-item">
-          <d-link class="nav-link" @click="GoBack()">
+          <d-link class="nav-link" to="/browse-proposals">
             <div class="item-icon-wrapper">
               <i class="material-icons">arrow_back</i>
             </div>
-            <span>Go back</span>
+            <span>Go back 2</span>
+
+          </d-link>
+          <d-link class="nav-link" to="/proposal-managers" >
+            <div class="item-icon-wrapper">
+              <i class="material-icons">account_box</i>
+            </div>
+            <span>Manager Applications</span>
+
+          </d-link>
+          <d-link class="nav-link" to="/proposal/proposed-project-id">
+            <div class="item-icon-wrapper">
+              <i class="material-icons">group_work</i>
+            </div>
+            <span>Proposal</span>
 
           </d-link>
           <d-link class="nav-link" to="/proposal-managers-list" >
             <div class="item-icon-wrapper">
-              <i class="material-icons">person</i>
+              <i class="material-icons">supervisor_account</i>
             </div>
             <span>Manager Overview</span>
 
           </d-link>
           <d-link class="nav-link" to="/proposal-managers-qa">
             <div class="item-icon-wrapper">
-              <i class="material-icons">person</i>
+              <i class="material-icons">face</i>
             </div>
             <span>Q/A</span>
 
           </d-link>
-          <d-link class="nav-link" to="/proposal-managers" >
-            <div class="item-icon-wrapper">
-              <i class="material-icons">person</i>
-            </div>
-            <span>Manager Applications</span>
 
-          </d-link>
 
         </li>
 

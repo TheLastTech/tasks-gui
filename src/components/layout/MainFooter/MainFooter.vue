@@ -18,11 +18,26 @@
     title: 'Home',
     to: '#',
   }, {
-    title: 'Services',
-    to: '#',
+    title: 'Search',
+    to: '/browse-proposals',
   }, {
-    title: 'About',
-    to: '#',
+    title: 'My Profile',
+    to: '/person/me',
+  }, {
+    title: 'Youtube',
+    to: 'https://youtube.com',
+  }, {
+    title: 'Twitter',
+    to: 'https://twitter.com/iamrodrigue',
+  }, {
+    title: 'Reddit',
+    to: 'https://reddit.com',
+  }, {
+    title: 'Github',
+    to: 'https://github.com/xmnservices/',
+  }, {
+    title: 'Support',
+    to: 'help@react-coder.com',
   }];
 
   export default {
@@ -42,7 +57,7 @@
        */
       copyright: {
         type: String,
-        default: 'Copyright © 2018 React-Coder',
+        default: 'Copyright © 2018 XMN Services',
       },
       /**
        * Whether the footer should be wrapped in a container, or not.

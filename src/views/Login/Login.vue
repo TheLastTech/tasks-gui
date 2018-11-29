@@ -22,7 +22,7 @@
 
 <script>
 /* eslint-disable */
-import LoginBox from '@/components/login/LoginBox.vue';
+import LoginBox from './LoginBox/LoginBox.vue'
 
 
 import 'quill/dist/quill.snow.css';

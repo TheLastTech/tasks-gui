@@ -46,6 +46,8 @@
               <d-tab title="Pledge">
                 <browse-proposal-card-pledge-tab/>
               </d-tab>
+              <d-tab title="Visit" :no-body="true" @click="()=>GotoProposal(Proposal)">
+                </d-tab>
             </d-tabs>
             <d-button-group>
               <d-button href="https://twitter.com/intent/tweet?button_hashtag=ThisProjectName&ref_src=twsrc%5Etfw"

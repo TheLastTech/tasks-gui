@@ -25,7 +25,7 @@ import getSidebarItems from '@/data/sidebar-nav-items';
 
 // Main layout components
 import MainNavbar from '@/components/layout/MainNavbar/MainNavbar.vue';
-import MainSidebar from '@/components/layout/MainSidebar/MainSidebar.vue';
+import MainSidebar from '@/components/layout/MainSidebar/ProposalSidebar.vue';
 import MainFooter from '@/components/layout/MainFooter/MainFooter.vue';
 
 export default {

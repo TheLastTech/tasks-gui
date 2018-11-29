@@ -2,8 +2,7 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-import ComponentsOverview from './views/Unused/ComponentsOverview.vue'
-import ProposalOverview from './views/Unused/ProposalOverview.vue'
+
 import UserProfile from './views/UserProfile/UserProfile.vue'
 import Login from './views/Login/Login.vue';
 
@@ -50,10 +49,6 @@ export default new Router({
       name: 'proposalproject',
       component: CreateProposal
     }, {
-      path: '/proposal-overview',
-      name: 'proposal-overview',
-      component: ProposalOverview
-    }, {
       path: '/browse-proposals',
       name: 'browse-proposals',
       component: BrowseProposals,
@@ -66,10 +61,6 @@ export default new Router({
       component: Proposals,
 
     }, {
-      path: '/dev-lib',
-      name: 'library',
-      component: ComponentsOverview
-    },{
       path: '/proposal-managers-list',
       name: 'managerslist',
       component: ManagerList,
@@ -86,7 +77,7 @@ export default new Router({
         layout: 'BrowseManager'
       }
 
-    },{
+    }, {
       path: '/proposal-managers-qa',
       name: 'managerqaroom',
       component: ManagerQaRooms,

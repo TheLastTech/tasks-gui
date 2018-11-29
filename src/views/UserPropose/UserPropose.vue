@@ -25,18 +25,18 @@
 </template>
 
 <script>
-import ProposalSidebarActions from '@/components/proposal-editor/SidebarActions.vue';
-import ProposalSidebarCategories from '@/components/proposal-editor/SidebarCategories.vue';
-import ProposalEditor from '@/components/proposal-editor/Editor.vue';
+  import 'quill/dist/quill.snow.css';
+  import ProposalSidebarActions from './proposal-editor/SidebarActions.vue';
+  import ProposalSidebarCategories from './proposal-editor/SidebarCategories.vue';
+  import ProposalEditor from './proposal-editor/Editor.vue';
 
-import 'quill/dist/quill.snow.css';
 
-export default {
-  components: {
-    ProposalEditor,
-    ProposalSidebarActions,
-    ProposalSidebarCategories,
+  export default {
+    components: {
+      ProposalEditor,
+      ProposalSidebarActions,
+      ProposalSidebarCategories,
 
-  },
-};
+    },
+  };
 </script>

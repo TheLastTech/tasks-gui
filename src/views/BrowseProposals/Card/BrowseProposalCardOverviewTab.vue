@@ -2,7 +2,6 @@
   <div>
 
 
-
       <h5 class="card-title">
         <a href="#" class="text-fiord-blue">{{ post.title }}</a>
       </h5>
@@ -15,7 +14,7 @@
 export default {
   name: 'browse-proposal-card-overview-tab',
   props: {
-    post: {type: Object },
+    post: { type: Object },
   },
 };
 </script>

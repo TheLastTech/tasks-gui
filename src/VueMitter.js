@@ -8,5 +8,4 @@ export default class VueMitter extends EventEmitter {
     this.$once = this.once.bind(this);
     this.$off = this.removeListener.bind(this);
   }
-
 }

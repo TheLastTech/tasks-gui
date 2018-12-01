@@ -13,7 +13,7 @@
     export default {
         name: 'proposal-header',
         props: {
-            Proposal: {}
-        }
-    }
+            Proposal: {},
+        },
+    };
 </script>

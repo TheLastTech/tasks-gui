@@ -1,9 +1,5 @@
 <template>
-  <nav>
-    <d-link class="nav-link" to="/browse-proposals">Search</d-link>
-
-    <d-link class="nav-link" to="/person/me">Profile</d-link>
-  </nav>
+  <top-nav-bar />
 </template>
 
 <style>
@@ -11,3 +7,10 @@
     cursor: pointer;
   }
 </style>
+<script>
+  import TopNavBar from '../MainNavbar/TopNavBar.vue';
+
+  export default {
+    components: { TopNavBar },
+  };
+</script>

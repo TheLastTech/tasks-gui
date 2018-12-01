@@ -44,7 +44,7 @@
 <script>
   export default {
     props: {
-      post: {type: Object },
+      post: { type: Object },
     },
     name: 'browse-proposal-card-pledge-tab',
   };

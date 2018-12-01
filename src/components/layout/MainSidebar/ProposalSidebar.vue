@@ -33,7 +33,7 @@
             <div class="item-icon-wrapper">
               <i class="material-icons">arrow_back</i>
             </div>
-            <span>Go back 2</span>
+            <span>Go back</span>
 
           </d-link>
           <d-link class="nav-link" to="/proposal-managers" >

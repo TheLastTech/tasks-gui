@@ -19,7 +19,7 @@
   import ManagerMobilePfp from '../ManagerMobilePfp.vue';
 
   export default {
-    name:'manager-applications',
+    name: 'manager-applications',
     components: {
       ManagerMobilePfp, InterviewRoom, ManagerShortInfo, ManagerNavigator, ProposalManagerOverwriteModal,
     },

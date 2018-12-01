@@ -48,6 +48,13 @@ export default new Router({
       path: '/proposeproj',
       name: 'proposalproject',
       component: CreateProposal
+    },{
+      path: '/browse-proposals/:type',
+      name: 'browse-proposals',
+      component: BrowseProposals,
+      meta: {
+        layout: 'Search'
+      }
     }, {
       path: '/browse-proposals',
       name: 'browse-proposals',

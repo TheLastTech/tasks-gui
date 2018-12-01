@@ -1,5 +1,5 @@
 <template>
-  <d-form class="main-navbar__search w-100 d-none d-md-flex d-lg-flex">
+  <d-form class="main-navbar__search w-75 d-none d-md-flex d-lg-flex">
 
 
     <d-input-group class="ml-3" seamless>

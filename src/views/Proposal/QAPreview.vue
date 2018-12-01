@@ -8,7 +8,7 @@
   export default {
     name: 'QAPreview',
     props: {
-      QuestionLine: {}
-    }
-  }
+      QuestionLine: {},
+    },
+  };
 </script>

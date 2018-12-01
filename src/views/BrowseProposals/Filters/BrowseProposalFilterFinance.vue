@@ -39,7 +39,7 @@
 
     methods: {
       FilterChanged(){
-        this.$emit('FilterChanged',this.FinanceFilter)
+        this.$emit('FilterChanged', this.FinanceFilter);
       },
     },
     name: 'browse-proposal-card-finance-tab',

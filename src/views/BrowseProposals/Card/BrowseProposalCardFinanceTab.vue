@@ -29,7 +29,7 @@
   export default {
 
     props: {
-      post: {type: Object},
+      post: { type: Object },
     },
     data() {
       return {

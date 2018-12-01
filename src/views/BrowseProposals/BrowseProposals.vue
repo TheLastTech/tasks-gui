@@ -31,6 +31,7 @@
                 }}</a>
             </div>
           </div>
+
           <d-card-body class="mx-auto text-center w-100">
 
             <d-tabs @input="(tab)=>TabChanged(Proposal,idx,tab)" card pills nav-class="list-inline mx-auto justify-content-center" content-class="h-100">

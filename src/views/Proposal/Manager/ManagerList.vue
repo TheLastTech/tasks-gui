@@ -45,7 +45,6 @@
     },
 
     mounted() {
-
       this.$eventHub.$emit('VisibleManagerChange', null);
     },
     beforeDestroy() {

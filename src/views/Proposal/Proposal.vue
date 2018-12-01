@@ -68,7 +68,7 @@
   import ProposalCardPledgeTab from './Tab/ProposalCardPledgeTab.vue';
   import ProposalCardFinanceTab from './Tab/ProposalCardFinanceTab.vue';
   import ProposalCardSettingsTab from './Tab/ProposalCardSettingsTab.vue';
-  import ProposalHeader from "./ProposalHeader";
+  import ProposalHeader from './ProposalHeader';
 
 
   // Second Row of posts

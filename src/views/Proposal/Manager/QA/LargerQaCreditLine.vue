@@ -10,11 +10,11 @@
 <script>
 
 
-  import ManagerProfileLink from "./ManagerProfileLink";
+  import ManagerProfileLink from './ManagerProfileLink';
 
   export default {
     name: 'larger-qa-credit-line',
-    components: {ManagerProfileLink},
+    components: { ManagerProfileLink },
     props: {
       QuestionLine: {},
     },

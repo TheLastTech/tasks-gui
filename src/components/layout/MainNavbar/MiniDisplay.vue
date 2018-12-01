@@ -37,7 +37,6 @@
     methods: {
 
       ManagerChanged(NewManager) {
-
         this.Manager = NewManager;
       },
     },

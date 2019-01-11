@@ -6,3 +6,6 @@ this work has now claim to steve rodrigue's xmn work as he had pull requests don
 
  
 currently he is trying to dodge the dmca by making a new github https://github.com/xmnnetwork (previously, https://github.com/xmnservices)
+
+
+site about the scam https://rodrigue.tech 
